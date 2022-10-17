@@ -1,6 +1,7 @@
 plugins {
     id 'org.springframework.boot' version '2.7.4'
     id 'io.spring.dependency-management' version '1.0.14.RELEASE'
+    id 'com.google.cloud.tools.jib' version '3.2.1'
     id 'java'
 }
 
@@ -25,6 +26,28 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+jib {
+    from {
+        image = "openjdk:17.0.2-slim-buster"
+        platforms {
+            platform {
+                architecture = "arm64"
+                os = "linux"
+            }
+            platform {
+                architecture = "amd64"
+                os = "linux"
+            }
+        }
+    }
+    to {
+        image = "zxcv9203/${project.name}"
+        tags = ["${project.version.toString().toLowerCase()}"]
+    }
+    container {
+        jvmFlags = ['-Xms512m']
+    }
+}
 tasks.named('test') {
     useJUnitPlatform()
 }
