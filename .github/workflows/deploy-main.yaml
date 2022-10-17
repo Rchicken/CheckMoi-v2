@@ -31,7 +31,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Execute Gradle build and analyze
+      - name: gradlew containerizing
         run: ./gradlew jib
 
       - name: ssh-deploy
