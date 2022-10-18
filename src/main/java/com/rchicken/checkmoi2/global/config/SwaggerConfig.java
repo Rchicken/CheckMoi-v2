@@ -12,7 +12,6 @@ import io.swagger.v3.oas.models.info.Info;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Configuration
 @RequiredArgsConstructor
 @EnableConfigurationProperties(SwaggerProps.class)
@@ -22,7 +21,8 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI springShopOpenAPI() {
         return new OpenAPI()
-            .info(new Info().title(swaggerProps.title())
+            .info(new Info()
+                .title(swaggerProps.title())
                 .description(swaggerProps.description())
                 .version(swaggerProps.version()))
             .servers(swaggerProps.getServers())
