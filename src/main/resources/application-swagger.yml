@@ -1,0 +1,12 @@
+swagger:
+  title: CheckMoi-v2 API
+  description: CheckMoi new version docs
+  version: v0.0.1
+  servers:
+    - url: http://localhost:8080
+      description: local
+    - url: https://v2.checkmoi.ga
+      description: prod
+  external-docs:
+    description: 앞광고! YongC blog
+    url : https://yongc.tistory.com
