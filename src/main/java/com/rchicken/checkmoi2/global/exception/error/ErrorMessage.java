@@ -11,7 +11,7 @@ public enum ErrorMessage {
     ENTITY_NOT_FOUND("찾을 수 없는 엔티티입니다.", HttpStatus.NOT_FOUND),
 
     USER_NOT_FOUND("해당하는 유저를 찾을 수 없습니다", HttpStatus.NOT_FOUND),
-    USER_ALREADY_EXIST("해당하는 유저가 이미 존재합니다", HttpStatus.BAD_REQUEST),
+    USER_ALREADY_EXIST("해당하는 유저가 이미 존재합니다", HttpStatus.CONFLICT),
 
     INVALID_INPUT("유효하지 않은 입력값 입니다.", HttpStatus.BAD_REQUEST),
     INVALID_TYPE("유효하지 않은 타입값 입니다.", HttpStatus.BAD_REQUEST),
