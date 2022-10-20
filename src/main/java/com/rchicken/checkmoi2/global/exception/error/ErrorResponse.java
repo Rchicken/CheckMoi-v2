@@ -39,7 +39,7 @@ public class ErrorResponse {
     }
 
     @Getter
-    public static class FieldError {
+    private static class FieldError {
 
         private String field;
 
